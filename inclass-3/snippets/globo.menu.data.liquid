@@ -1,0 +1,18 @@
+{%- assign primary_locale = 'null' -%}
+{%- for locale in shop.published_locales -%}{%- if locale.primary -%}{%- assign primary_locale = locale.iso_code | json -%}{%- endif -%}{%- endfor -%}
+<script type="text/javascript">
+  window.GloboMenuConfig = window.GloboMenuConfig || {}
+  window.GloboMenuConfig.hasCarousel = {% if items contains 'carousel' %}true{% else %}false{% endif %};
+  window.GloboMenuConfig.products = window.GloboMenuConfig.products || {};
+  window.GloboMenuConfig.collections = window.GloboMenuConfig.collections || {};
+  window.GloboMenuConfig.pages = window.GloboMenuConfig.pages || {};
+  window.GloboMenuConfig.curLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.GloboMenuLocale = {{request.locale.iso_code | json}};
+  window.GloboMenuConfig.locale = {{primary_locale}};
+  window.GloboMenuConfig.isMultiCurrency  = false;
+  window.GloboMenuConfig.GloboMenuMissingProducts = [];
+  {%- capture product -%}{{-all_products['white-dining-table'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('white-dining-table');{%- else -%}window.GloboMenuConfig.products['white-dining-table'] = {{-product-}};{%- endif -%}
+window.GloboMenuConfig.collections['dinning-set'] = {handle:{{-collections['dinning-set'].handle | json-}},title:{{-collections['dinning-set'].title | json-}}};{%- capture product -%}{{-all_products['dining-set'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('dining-set');{%- else -%}window.GloboMenuConfig.products['dining-set'] = {{-product-}};{%- endif -%}
+{%- capture product -%}{{-all_products['outdoor-dinning'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('outdoor-dinning');{%- else -%}window.GloboMenuConfig.products['outdoor-dinning'] = {{-product-}};{%- endif -%}
+window.GloboMenuConfig.collections['chires'] = {handle:{{-collections['chires'].handle | json-}},title:{{-collections['chires'].title | json-}}};{%- capture product -%}{{-all_products['outdoor-chair-1'] | json-}}{%- endcapture -%}{%- if product contains 'Liquid error' -%}window.GloboMenuConfig.GloboMenuMissingProducts.push('outdoor-chair-1');{%- else -%}window.GloboMenuConfig.products['outdoor-chair-1'] = {{-product-}};{%- endif -%}
+</script>
