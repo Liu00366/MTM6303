@@ -7,10 +7,6 @@
     include "includes/header.php";
 ?>  
 
-<?php
-    print_r($_SESSION);
-?>
-
 <div class="">
     <div class="container">
         <div class="row">

@@ -8,8 +8,6 @@
         include "includes/header.php";
     ?>
 
-<?php print_r($_SESSION); ?>
-
 <div class="white-text-container background-image-container" style="background-image: url('./assets/images/img-home.jpg')">
     <div class="opacity"></div>
     <div class="container">

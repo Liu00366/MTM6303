@@ -1,16 +1,14 @@
 <?php 
 // Assigning the value of session variable to the $title variable
-if(isset($_SESSION["page_title"])) {
+
     $title = $_SESSION["page_title"]; 
-} else {
-    $title = "Home Page";
-}
-if(isset($_SESSION["current_page"])) {
+
     $current_page = $_SESSION["current_page"]; 
-} else {
-    $current_page =  $_SESSION[ "index" ];
-}
+
 ?>
+
+
+
 
 <!-- start html tag -->
 <html lang="en">
@@ -55,15 +53,15 @@ if(isset($_SESSION["current_page"])) {
 
       <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
         <ul class="nav navbar-nav navbar-right">
-            <li class ="<?php if($current_page == 'index') {echo 'current-menu-item';}?>">
-                <a href="./index.php" title="" class="active">Home</a>
+            <li>
+                <a href="./index.php" title="" <?php if ($current_page =='index'){echo 'class="active"';}?>> Home</a>
             </li>
 
-            <li class = "<?php echo $current_page == 'about' ? 'current-menu-item' : ''; ?>">
-                <a href="./about.php" title="" class="active"> About</a>
+            <li >
+                <a href="./about.php" title="" <?php if ($current_page =='about'){echo 'class="active"';}?>> About</a>
             </li>
-            <li class = "<?php if($current_page == 'pricing') {echo 'current-menu-item';}?>">
-                <a href="./pricing.php" title="" class="active"> Pricing </a>
+            <li >
+                <a href="./pricing.php" title="" <?php if ($current_page =='pricing'){echo 'class="active"';}?>> Pricing </a>
             </li>
 
         </ul>

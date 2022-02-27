@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link href="./assets/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="./assets/favicon.ico" rel="icon">
-
- 
-
-  <title>Title page</title>  
-
-<link href="./assets/css/main.a3f694c0.css" rel="stylesheet"></head>
-
-<body>
+<?php
+    // Including the header
+    require_once "includes/session_include.php";
+    $_SESSION["page_title"] = "Pricing Page";
+    $_SESSION["current_page"] = "pricing";
+    include "includes/header.php"; 
+?>
 
 <div class="section-container">
     <div class="container">
@@ -92,8 +75,10 @@
         </div>
 
     </div>
-</div>  
+</div>
 
-</body>
-
-</html>
+<?php 
+    //include the footer
+    include "includes/footer.php";
+?>
+    
